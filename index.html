@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio - Restaurante Delícias</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Restaurante Delícias</h1>
+        <nav>
+            <ul>
+                <li><a href="#hamburguer_tradicional">Hambúrguer Tradicional</a></li>
+                <li><a href="#hamburguer_gourmet">Hambúrguer Gourmet</a></li>
+                <li><a href="#cachorro_quente">Cachorro-Quente</a></li>
+                <li><a href="#pasteis">Pastéis</a></li>
+                <li><a href="#bebidas">Bebidas</a></li>
+                <li><a href="#sobremesas">Sobremesas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Bem-vindo ao nosso Cardápio!</h2>
+        <p>Escolha uma das categorias acima para começar a fazer o seu pedido.</p>
+
+        <!-- Hamburguer Tradicional -->
+        <section id="hamburguer_tradicional" class="section">
+            <h2>Hambúrguer Tradicional</h2>
+            <div class="menu-item" data-price="12.00">
+                <p class="item-name item-title">Hambúrguer Clássico - R$12,00</p>
+                <p class="item-description">"Carne suculenta, queijo e salada"</p>
+                <div class="quantity-controls">
+                    <button onclick="removeItem(event)">-</button>
+                    <span class="quantity">0</span>
+                    <button onclick="addItem(event)">+</button>
+                </div>
+            </div>
+            <div class="menu-item" data-price="15.00">
+                <p class="item-name item-title">Cheeseburger - R$15,00</p>
+                <p class="item-description">"Carne, queijo cheddar e bacon"</p>
+                <div class="quantity-controls">
+                    <button onclick="removeItem(event)">-</button>
+                    <span class="quantity">0</span>
+                    <button onclick="addItem(event)">+</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hambúrguer Gourmet -->
+        <section id="hamburguer_gourmet" class="section">
+            <h2>Hambúrguer Gourmet</h2>
+            <div class="menu-item" data-price="20.00">
+                <p class="item-name item-title">Hambúrguer Gourmet de Picanha - R$20,00</p>
+                <p class="item-description">"Picanha suculenta com queijo brie"</p>
+                <div class="quantity-controls">
+                    <button onclick="removeItem(event)">-</button>
+                    <span class="quantity">0</span>
+                    <button onclick="addItem(event)">+</button>
+                </div>
+            </div>
+            <div class="menu-item" data-price="18.00">
+                <p class="item-name item-title">Hambúrguer Vegano - R$18,00</p>
+                <p class="item-description">"Feito com grão de bico e especiarias"</p>
+                <div class="quantity-controls">
+                    <button onclick="removeItem(event)">-</button>
+                    <span class="quantity">0</span>
+                    <button onclick="addItem(event)">+</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cachorro-Quente -->
+        <section id="cachorro_quente" class="section">
+            <h2>Cachorro-Quente</h2>
+            <div class="menu-item" data-price="8.00">
+                <p class="item-name item-title">Cachorro-Quente Tradicional - R$8,00</p>
+                <p class="item-description">"Salsicha com molho especial e batata palha"</p>
+                <div class="quantity-controls">
+                    <button onclick="removeItem(event)">-</button>
+                    <span class="quantity">0</span>
+                    <button onclick="addItem(event)">+</button>
+                </div>
+            </div>
+            <div class="menu-item" data-price="10.00">
+                <p class="item-name item-title">Cachorro-Quente com Bacon - R$10,00</p>
+                <p class="item-description">"Com bacon crocante e cebola caramelizada"</p>
+                <div class="quantity-controls">
+                    <button onclick="removeItem(event)">-</button>
+                    <span class="quantity">0</span>
+                    <button onclick="addItem(event)">+</button>
+                </div>
+            </div>
+            <div class="menu-item" data-price="9.00">
+                <p class="item-name item-title">Cachorro-Quente Vegano - R$9,00</p>
+                <p class="item-description">"Salsicha vegana com molho de mostarda"</p>
+                <div class="quantity-controls">
+                    <button onclick="removeItem(event)">-</button>
+                    <span class="quantity">0</span>
+                    <button onclick="addItem(event)">+</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pastéis -->
+        <section id="pasteis" class="section">
+            <h2>Pastéis</h2>
+            <div class="menu-item" data-price="4.00">
+                <p class="item-name item-title">Pastel de Queijo - R$4,00</p>
+                <p class="item-description">"Queijo derretido e crocante"</p>
+                <div class="quantity-controls">
+                    <button onclick="removeItem(event)">-</button>
+                    <span class="quantity">0</span>
+                    <button onclick="addItem(event)">+</button>
+                </div>
+            </div>
+            <div class="menu-item" data-price="5.00">
+                <p class="item-name item-title">Pastel de Carne - R$5,00</p>
+                <p class="item-description">"Carne temperada e suculenta"</p>
+                <div class="quantity-controls">
+                    <button onclick="removeItem(event)">-</button>
+                    <span class="quantity">0</span>
+                    <button onclick="addItem(event)">+</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bebidas -->
+        <section id="bebidas" class="section">
+            <h2>Bebidas</h2>
+            <div class="menu-item" data-price="5.00">
+                <p class="item-name item-title">Refrigerante - R$5,00</p>
+                <p class="item-description">"Lata de refrigerante gelada"</p>
+                <div class="quantity-controls">
+                    <button onclick="removeItem(event)">-</button>
+                    <span class="quantity">0</span>
+                    <button onclick="addItem(event)">+</button>
+                </div>
+            </div>
+            <div class="menu-item" data-price="7.00">
+                <p class="item-name item-title">Suco Natural - R$7,00</p>
+                <p class="item-description">"Suco fresco e saudável"</p>
+                <div class="quantity-controls">
+                    <button onclick="removeItem(event)">-</button>
+                    <span class="quantity">0</span>
+                    <button onclick="addItem(event)">+</button>
+                </div>
+            </div>
+            <div class="menu-item" data-price="3.00">
+                <p class="item-name item-title">Água Mineral - R$3,00</p>
+                <p class="item-description">"Água mineral em garrafa"</p>
+                <div class="quantity-controls">
+                    <button onclick="removeItem(event)">-</button>
+                    <span class="quantity">0</span>
+                    <button onclick="addItem(event)">+</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobremesas -->
+        <section id="sobremesas" class="section">
+            <h2>Sobremesas</h2>
+            <div class="menu-item" data-price="8.00">
+                <p class="item-name item-title">Brownie de Chocolate - R$8,00</p>
+                <p class="item-description">"Brownie rico e cremoso"</p>
+                <div class="quantity-controls">
+                    <button onclick="removeItem(event)">-</button>
+                    <span class="quantity">0</span>
+                    <button onclick="addItem(event)">+</button>
+                </div>
+            </div>
+            <div class="menu-item" data-price="10.00">
+                <p class="item-name item-title">Gelato de Frutas - R$10,00</p>
+                <p class="item-description">"Gelato artesanal com sabores variados"</p>
+                <div class="quantity-controls">
+                    <button onclick="removeItem(event)">-</button>
+                    <span class="quantity">0</span>
+                    <button onclick="addItem(event)">+</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Botão Flutuante de Pedidos -->
+    <div id="floating-button" onclick="toggleOrderSummary()">
+        <span id="order-count">0</span>
+        <strong>P</strong>
+    </div>
+
+    <!-- Resumo do Pedido -->
+    <div id="order-summary" class="hidden">
+        <h3>Resumo do Pedido</h3>
+        <div id="summary-items"></div>
+        <p id="total-value">Total: R$0.00</p>
+        <form id="order-form">
+            <div>
+                <label for="customer-name">Nome do Cliente:</label>
+                <input type="text" id="customer-name" placeholder="Nome do Cliente">
+            </div>
+            <div>
+                <label for="payment-method">Forma de Pagamento:</label>
+                <select id="payment-method">
+                    <option value="cash">Dinheiro</option>
+                    <option value="card">Cartão</option>
+                </select>
+            </div>
+            <div id="change-div" class="hidden">
+                <label for="change">Troco para:</label>
+                <input type="number" id="change" placeholder="Troco para quanto?">
+            </div>
+            <div>
+                <label for="observacao">Observação:</label>
+                <textarea id="observacao" placeholder="Observações sobre o pedido"></textarea>
+            </div>
+            <button type="button" onclick="sendOrder()">Finalizar Pedido</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

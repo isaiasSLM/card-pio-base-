@@ -1,0 +1,353 @@
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    background-color: #1f8e2e;
+    color: #ffffff;
+}
+
+/* Header e navegação */
+#header {
+    background-color: #FEDD00;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo */
+#logo {
+    color: #2d3436;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    /* Para o efeito de underline */
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #2d3436;
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Conteúdo principal */
+[role="main"] {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Seções do cardápio */
+.section {
+    background-color: white;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.section:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #0c0c0c;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #FEDD00;
+}
+
+/* Itens do menu */
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1.25rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.997);
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item h3 {
+    font-size: 1.2rem;
+    color: #2d3436;
+    margin-bottom: 0.25rem;
+}
+
+.menu-item p {
+    color: #636e72;
+    font-size: 0.9rem;
+}
+
+/* Botões de quantidade */
+.menu-item button {
+    background-color: #FEDD00;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.menu-item button:hover {
+    background-color: #FFC800;
+    transform: scale(1.1);
+}
+
+.menu-item span {
+    font-weight: 600;
+    min-width: 2rem;
+    text-align: center;
+}
+
+
+/* Estilos para o botão flutuante */
+#floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FEDD00;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2d3436;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+#floating-button:hover {
+    transform: scale(1.1);
+    background-color: #FFC800;
+}
+
+/* Resumo do pedido */
+#order-summary {
+    position: fixed;
+    top: 1%;
+    left: 50%;
+    width: 400px;
+    max-height: 80vh;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-50%);
+    z-index: 999;
+    display: block;
+    /* Exibir inicialmente */
+}
+
+#order-summary h3 {
+    background-color: #FEDD00;
+    color: #2d3436;
+    padding: 1rem;
+    border-radius: 12px 12px 0 0;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Container dos itens com rolagem */
+#summary-items {
+    flex: 1;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+/* Estilo para cada item na lista */
+#summary-items div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0.5rem;
+}
+
+#summary-items div:last-child {
+    border-bottom: none;
+}
+
+/* Área do formulário */
+#order-summary form {
+    padding: 1rem;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    border-radius: 0 0 12px 12px;
+}
+
+/* Campos do formulário */
+#order-summary input,
+#order-summary select,
+#order-summary textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+#order-summary input:focus,
+#order-summary select:focus,
+#order-summary textarea:focus {
+    border-color: #FEDD00;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(254, 221, 0, 0.2);
+}
+
+#order-summary button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #FEDD00;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#order-summary button:hover {
+    background-color: #FFC800;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #order-summary {
+        width: 90%;
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 100px;
+    }
+
+    #floating-button {
+        right: 50%;
+        transform: translateX(50%);
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#order-summary:not(.hidden) {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Classe para esconder o resumo */
+.hidden {
+    display: none !important;
+}
+
+/* Estilos para o botão "Remover" */
+.remove-item {
+    cursor: pointer;
+    color: #ff4757;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.remove-item:hover {
+    color: #ff6b81;
+}
